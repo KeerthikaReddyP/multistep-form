@@ -4,16 +4,26 @@ import Step2 from "./components/Step2";
 import Step3 from "./components/Step3";
 
 function App() {
+  const [step, setStep] = useState(1);
 
-  const [step,setStep]=useState(1);
+  const handleBack = () => {
+    setStep(step - 1);
+  };
+  const handleNext = () => {
+    setStep(step + 1);
+  };
 
   return (
     <div className="m-4 p-2 bg-amber-600">
-      {step===1 && <Step1 />}
-      {step===2 && <Step2 />}
-      {step===3 && <Step3 />}
-      {step>1 && <button>Back</button>}
-      {step<3 ? <button>Next</button> : <button>Submit</button>}
+      {step === 1 && <Step1 />}
+      {step === 2 && <Step2 />}
+      {step === 3 && <Step3 />}
+      {step > 1 && <button onClick={handleBack}>Back</button>}
+      {step < 3 ? (
+        <button onClick={handleNext}>Next</button>
+      ) : (
+        <button>Submit</button>
+      )}
     </div>
   );
 }
