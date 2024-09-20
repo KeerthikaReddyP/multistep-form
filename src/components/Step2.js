@@ -1,4 +1,5 @@
-const Step2=()=>{
+const Step2=({formData,setFormData})=>{
+    
     return <div>
         <h2>Address</h2>
         <div>

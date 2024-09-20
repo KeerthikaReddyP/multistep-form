@@ -1,4 +1,4 @@
-const Step3=()=>{
+const Step3=({formData})=>{
     return <div>
         <h2>Confirmation</h2>
         <div>
