@@ -9,15 +9,15 @@ const Step1=({formData, setFormData})=>{
         <h2>Personal details</h2>
         <div>
             <label>Name : </label>
-            <input type="text"  placeholder="Enter name" name="name" value={formData.name} onChange={handleChange}/>
+            <input type="text" placeholder="Enter name" name="name" value={formData.name} onChange={handleChange}/>
         </div>
         <div>
             <label>Email : </label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange}/>
+            <input type="email" placeholder="Enter email" name="email" value={formData.email} onChange={handleChange}/>
         </div>
         <div>
             <label>Mobile no. : </label>
-            <input type="text" name="mobile" value={formData.mobile} onChange={handleChange}/>
+            <input type="text" placeholder="Enter mobile number" name="mobile" value={formData.mobile} onChange={handleChange}/>
         </div>
     </div>
 }
