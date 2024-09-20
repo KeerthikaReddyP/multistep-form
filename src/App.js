@@ -5,6 +5,16 @@ import Step3 from "./components/Step3";
 
 function App() {
   const [step, setStep] = useState(1);
+  const [formData,setFormData]=useState({
+    name:'',
+    email:'',
+    mobile:'',
+    address1:'',
+    address2:'',
+    city:'',
+    state:'',
+    pincode:'',
+  });
 
   const handleBack = () => {
     setStep(step - 1);
