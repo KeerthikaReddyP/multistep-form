@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Step1 from "./components/Step1";
 import Step2 from "./components/Step2";
 import Step3 from "./components/Step3";
@@ -15,6 +15,16 @@ function App() {
     state:'',
     pincode:'',
   });
+
+  useEffect(()=>{
+    const savedData=localStorage.getItem("formData");
+    if(savedData) setFormData(JSON.parse(savedData));
+  },[]);
+
+  useEffect(()=>{
+    console.log("Useefect called");
+    localStorage.setItem("formData",JSON.stringify(formData));
+  },[step]);
 
   const handleBack = () => {
     setStep(step - 1);
