@@ -13,6 +13,10 @@ function App() {
     setStep(step + 1);
   };
 
+  const handleSubmit=()=>{
+    console.log("Form submitted");
+  };
+
   return (
     <div className="m-4 p-2 bg-amber-600">
       {step === 1 && <Step1 />}
@@ -22,7 +26,7 @@ function App() {
       {step < 3 ? (
         <button onClick={handleNext}>Next</button>
       ) : (
-        <button>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       )}
     </div>
   );
