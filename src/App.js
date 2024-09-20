@@ -12,6 +12,8 @@ function App() {
       {step===1 && <Step1 />}
       {step===2 && <Step2 />}
       {step===3 && <Step3 />}
+      {step>1 && <button>Back</button>}
+      {step<3 ? <button>Next</button> : <button>Submit</button>}
     </div>
   );
 }
