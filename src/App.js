@@ -29,9 +29,9 @@ function App() {
 
   return (
     <div className="m-4 p-2 bg-amber-600">
-      {step === 1 && <Step1 />}
-      {step === 2 && <Step2 />}
-      {step === 3 && <Step3 />}
+      {step === 1 && <Step1 formData={formData} setFormData={setFormData}/>}
+      {step === 2 && <Step2 formData={formData} setFormData={setFormData}/>}
+      {step === 3 && <Step3 formData={formData}/>}
       {step > 1 && <button onClick={handleBack}>Back</button>}
       {step < 3 ? (
         <button onClick={handleNext}>Next</button>
