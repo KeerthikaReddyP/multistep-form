@@ -77,12 +77,15 @@ function App() {
             />
           )}
           {step === 3 && <Step3 formData={formData} />}
-          {step > 1 && <button onClick={handleBack}>Back</button>}
-          {step < 3 ? (
-            <button onClick={handleNext}>Next</button>
-          ) : (
-            <button onClick={handleSubmit}>Submit</button>
-          )}
+
+          <div className="flex justify-center mt-4">
+            {step > 1 && <button onClick={handleBack} className="m-2 px-4 py-2 bg-blue-500 text-white rounded-md">Back</button>}
+            {step < 3 ? (
+              <button onClick={handleNext} className="m-2 px-4 py-2 bg-blue-500 text-white rounded-md">Next</button>
+            ) : (
+              <button onClick={handleSubmit} className="m-2 px-4 py-2 bg-blue-500 text-white rounded-md">Submit</button>
+            )}
+          </div>
         </div>
       </div>
     </div>
