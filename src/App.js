@@ -57,8 +57,8 @@ function App() {
 
   return (
     <div className="m-8 p-4 w-1/2 border border-black">
-      {step === 1 && <Step1 formData={formData} setFormData={setFormData}/>}
-      {step === 2 && <Step2 formData={formData} setFormData={setFormData}/>}
+      {step === 1 && <Step1 formData={formData} setFormData={setFormData} errors={errors}/>}
+      {step === 2 && <Step2 formData={formData} setFormData={setFormData} errors={errors}/>}
       {step === 3 && <Step3 formData={formData}/>}
       {step > 1 && <button onClick={handleBack}>Back</button>}
       {step < 3 ? (
