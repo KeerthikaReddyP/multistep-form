@@ -15,6 +15,7 @@ function App() {
     state:'',
     pincode:'',
   });
+  const [errors,setErrors]=useState({});
 
   useEffect(()=>{
     const savedData=localStorage.getItem("formData");
@@ -25,6 +26,24 @@ function App() {
     localStorage.setItem("formData",JSON.stringify(formData));
   },[formData]);
 
+
+  const validateStep = () => {
+    let errors = {};
+    if (step === 1) {
+      if (!formData.name) errors.name = 'Name is required';
+      if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) errors.email = 'Enter valid email';
+      if (!formData.phone || !/^\d{10}$/.test(formData.phone)) errors.phone = 'Enter 10-digit mobile numner';
+    } else if (step === 2) {
+      if (!formData.address1) errors.address1 = 'Address Line 1 is required';
+      if (!formData.city) errors.city = 'City is required';
+      if (!formData.state) errors.state = 'State is required';
+      if (!formData.zip || !/^\d{6}$/.test(formData.zip)) errors.zip = 'Enter Valid pincode';
+    }
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+
   const handleBack = () => {
     setStep(step - 1);
   };
@@ -33,11 +52,11 @@ function App() {
   };
 
   const handleSubmit=()=>{
-    console.log("Form submitted");
+    if(validateStep) alert("Form submitted");
   };
 
   return (
-    <div className="m-4 p-2 bg-amber-600">
+    <div className="m-8 p-4 w-1/2 border border-black">
       {step === 1 && <Step1 formData={formData} setFormData={setFormData}/>}
       {step === 2 && <Step2 formData={formData} setFormData={setFormData}/>}
       {step === 3 && <Step3 formData={formData}/>}
