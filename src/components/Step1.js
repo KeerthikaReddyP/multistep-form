@@ -1,15 +1,15 @@
 const Step1=({formData, setFormData})=>{
 
     const handleChange=(e)=>{
-        const {key,value}=e.target;
-        setFormData((prevData)=>({...prevData,[key]:value}));
+        const {name,value}=e.target;
+        setFormData((prevData)=>({...prevData,[name]:value}));
     };
     
     return <div>
         <h2>Personal details</h2>
         <div>
             <label>Name : </label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange}/>
+            <input type="text"  placeholder="Enter name" name="name" value={formData.name} onChange={handleChange}/>
         </div>
         <div>
             <label>Email : </label>

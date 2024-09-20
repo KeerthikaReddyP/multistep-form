@@ -22,9 +22,8 @@ function App() {
   },[]);
 
   useEffect(()=>{
-    console.log("Useefect called");
     localStorage.setItem("formData",JSON.stringify(formData));
-  },[step]);
+  },[formData]);
 
   const handleBack = () => {
     setStep(step - 1);
