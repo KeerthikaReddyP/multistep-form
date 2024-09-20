@@ -2,14 +2,14 @@ const Step3=({formData})=>{
     return <div>
         <h2>Confirmation</h2>
         <div>
-            <p>Name :</p>
-            <p>Email :</p>
-            <p>Mobile number :</p>
-            <p>Address Line 1 :</p>
-            <p>Address Line 2 :</p>
-            <p>City :</p>
-            <p>State :</p>
-            <p>Pincode :</p>
+            <p>Name : {formData.name}</p>
+            <p>Email : {formData.email}</p>
+            <p>Mobile number : {formData.mobile}</p>
+            <p>Address Line 1 : {formData.address1}</p>
+            <p>Address Line 2 : {formData.address2}</p>
+            <p>City : {formData.city}</p>
+            <p>State : {formData.state}</p>
+            <p>Pincode : {formData.pincode}</p>
         </div>
     </div>
 }
